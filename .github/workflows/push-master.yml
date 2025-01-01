@@ -44,20 +44,8 @@ jobs:
             #         username: ${{ secrets.REGISTRY_USER }}
             #         password: ${{ github.token }}
 
-            -   name: Set up QEMU
-                uses: docker/setup-qemu-action@v3
-
-            -   name: Set up Docker Buildx
-                uses: docker/setup-buildx-action@v3
-                
             -   name: Permissions
                 run: sudo chown -R 1000:1000 .
-
-            -   name: Check docker
-                run: sudo which docker
-
-            # -   name: Check docker-compose
-            #     run: sudo which docker compose
 
             -   name: Init
                 run: sudo make init

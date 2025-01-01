@@ -49,17 +49,18 @@ jobs:
 
             -   name: Set up Docker Buildx
                 uses: docker/setup-buildx-action@v3
+                
             -   name: Permissions
                 run: sudo chown -R 1000:1000 .
 
             -   name: Check docker
                 run: sudo which docker
 
-            -   name: Check docker-compose
-                run: sudo which docker compose
+            # -   name: Check docker-compose
+            #     run: sudo which docker compose
 
             -   name: Init
-                run: make init
+                run: sudo make init
 
     #         -   name: Test
     #             run: make manager-test
